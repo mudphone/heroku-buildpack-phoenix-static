@@ -34,5 +34,9 @@ install_and_cache_npm_deps
 
 compile
 
+head "Building ClojureScript"
+source ${build_pack_dir}/lib/common_cljs.sh
+compile_cljs $1 $2 $3
+
 head "Finalizing build"
 write_profile
