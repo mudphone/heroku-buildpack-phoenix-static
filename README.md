@@ -8,7 +8,7 @@ This buildpack is meant to be used with the [Heroku Buildpack for Elixir](https:
 * Easily customizable to your build needs with its `compile` hook!
 * Works much like the [Heroku Buildpack for Elixir](https://github.com/HashNuke/heroku-buildpack-elixir)!
 * **Easy configuration** with `phoenix_static_buildpack.config` file
-* Automatically sets `DATABASE_URL` and includes `heroku-postgresql:hobby-dev` addon
+* Automatically sets `DATABASE_URL`
 * If your app doesn't have a Procfile, default web task `mix phoenix.server` will be run
 * Can configure versions for Node and NPM
 * Auto-installs Bower deps if `bower.json` is in your app's root path
@@ -34,8 +34,11 @@ If you don't specify a config option, then the default option from the buildpack
 __Here's a full config file with all available options:__
 
 ```bash
+# We can set the path to phoenix app. E.g. apps/phoenix_app when in umbrella.
+phoenix_relative_path=.
+
 # We can set the version of Node to use for the app here
-node_version=0.12.4
+node_version=5.3.0
 
 # We can set the version of NPM to use for the app here
 npm_version=2.10.1
